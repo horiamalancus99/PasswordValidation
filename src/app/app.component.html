@@ -1,0 +1,14 @@
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+  <p>Password : 
+    <input type="text" formControlName="Password" />
+  </p>
+  <p>Confirm Password : 
+    <input type="text" formControlName="ConfirmPassword"/>
+  </p>
+  <span *ngIf="loginForm.errors?.['passwordMatchError']">
+    Passwords does not match
+  </span>
+  <p>
+    <button [disabled]="loginForm.invalid">Login</button>
+  </p>
+</form>
